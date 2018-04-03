@@ -1886,25 +1886,25 @@ var PDFViewerApplication = {
 };
 var validateFileURL = void 0;
 {
-    var HOSTED_VIEWER_ORIGINS = [
+    var ALLOWED_ORIGINS = [
         'null',
-        'http://api.conta.test',
-        'http://app.conta.test',
-        'https://stage.conta.no',
-        'https://conta.no',
-        'https://app.conta.no'
+        /http:\/\/[\w-]+\.conta.test\/.*/,
+        /http:\/\/[\w-]+\.amazonaws.com\/conta.*/
     ];
 
     validateFileURL = function validateFileURL(file) {
         if (file === undefined) {
             return;
         }
+
         try {
             var viewerOrigin = new URL(window.location.href).origin,
                 fileOrigin = new URL(file, window.location.href).origin;
 
-            if (HOSTED_VIEWER_ORIGINS.indexOf(fileOrigin || 'null') >= 0) {
-                return;
+            for (var i = 0; i < ALLOWED_ORIGINS.length; i++) {
+                if (file.matches(ALLOWED_ORIGINS[i])) {
+                    return;
+                }
             }
 
             if (fileOrigin !== viewerOrigin) {
