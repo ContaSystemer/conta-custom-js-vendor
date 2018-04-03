@@ -1889,7 +1889,7 @@ var validateFileURL = void 0;
     var ALLOWED_ORIGINS = [
         'null',
         /http:\/\/[\w-]+\.conta.test\/.*/,
-        /http:\/\/[\w-]+\.amazonaws.com\/conta.*/
+        /https:\/\/[\w-]+\.amazonaws.com\/conta.*/
     ];
 
     validateFileURL = function validateFileURL(file) {
