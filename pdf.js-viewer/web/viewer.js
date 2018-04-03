@@ -1902,7 +1902,7 @@ var validateFileURL = void 0;
                 fileOrigin = new URL(file, window.location.href).origin;
 
             for (var i = 0; i < ALLOWED_ORIGINS.length; i++) {
-                if (file.matches(ALLOWED_ORIGINS[i])) {
+                if (file.match(ALLOWED_ORIGINS[i])) {
                     return;
                 }
             }
