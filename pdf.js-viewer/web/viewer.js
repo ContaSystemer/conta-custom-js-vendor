@@ -10367,7 +10367,13 @@ PDFPrintService.prototype = {
           return;
         }
         print.call(window);
-        setTimeout(resolve, 20);
+
+        var isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+        // iOS prints blank page after resolve. So for iOS resolve should be done manually by user.
+        if (isIOS === false) {
+          setTimeout(resolve, 20);
+        }
       }, 0);
     });
   },
