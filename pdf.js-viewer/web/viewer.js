@@ -1884,44 +1884,7 @@ var PDFViewerApplication = {
     _boundEvents.windowAfterPrint = null;
   }
 };
-var validateFileURL = void 0;
-{
-    var ALLOWED_ORIGINS = [
-        'null',
-        /http:\/\/[\w-]+\.conta.test\/.*/,
-        /https:\/\/[\w-]+\.amazonaws.com\/conta.*/,
-        /https:\/\/conta-.*amazonaws.com\/.*/
-    ];
 
-    validateFileURL = function validateFileURL(file) {
-        if (file === undefined) {
-            return;
-        }
-
-        try {
-            var viewerOrigin = new URL(window.location.href).origin,
-                fileOrigin = new URL(file, window.location.href).origin;
-
-            for (var i = 0; i < ALLOWED_ORIGINS.length; i++) {
-                if (file.match(ALLOWED_ORIGINS[i])) {
-                    return;
-                }
-            }
-
-            if (fileOrigin !== viewerOrigin) {
-                throw new Error('file origin does not match viewer\'s');
-            }
-        } catch (ex) {
-            var message = ex && ex.message;
-
-            PDFViewerApplication.l10n.get('loading_error', null, 'An error occurred while loading the PDF.').then(function (loadingErrorMessage) {
-                PDFViewerApplication.error(loadingErrorMessage, { message: message });
-            });
-
-            throw ex;
-        }
-    };
-}
 function loadAndEnablePDFBug(enabledTabs) {
   return new Promise(function (resolve, reject) {
     var appConfig = PDFViewerApplication.appConfig;
@@ -1947,7 +1910,6 @@ function webViewerInitialized() {
   var queryString = document.location.search.substring(1);
   var params = (0, _ui_utils.parseQueryString)(queryString);
   file = 'file' in params ? params.file : appConfig.defaultUrl;
-  validateFileURL(file);
   var waitForBeforeOpening = [];
   var fileInput = document.createElement('input');
   fileInput.id = appConfig.openFileInputName;
