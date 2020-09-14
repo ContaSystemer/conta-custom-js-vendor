@@ -1890,7 +1890,7 @@ var validateFileURL = void 0;
         'null',
         /http:\/\/[\w-]+\.conta.test\/.*/,
         /https:\/\/[\w-]+\.amazonaws.com\/conta.*/,
-        /https:\/\/conta-.*amazonaws.com\/.*
+        /https:\/\/conta-.*amazonaws.com\/.*/
     ];
 
     validateFileURL = function validateFileURL(file) {
