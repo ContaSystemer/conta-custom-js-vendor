@@ -1,0 +1,19 @@
+{
+  "name": "bower-jquery-sexy-tooltips",
+  "version": "0.0.1",
+  "authors": [
+    "Eduardo D. Sada"
+  ],
+  "description": "jQuery sexy tooltips",
+  "main": "js/sexy-tooltips.js",
+  "ignore": [
+    "bower.json"
+  ],
+  "keywords": [
+    "jquery",
+    "sexy",
+    "tooltips"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.coders.me/web-html-js-css/javascript/sexy-tooltips"
+}

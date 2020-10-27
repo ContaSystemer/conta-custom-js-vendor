@@ -1,0 +1,19 @@
+{
+  "name": "conta-custom-js-vendor",
+  "version": "0.0.3",
+  "description": "Used on front end.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ContaSystemer/conta-custom-js-vendor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ContaSystemer/conta-custom-js-vendor/issues"
+  },
+  "homepage": "https://github.com/ContaSystemer/conta-custom-js-vendor#readme"
+}
