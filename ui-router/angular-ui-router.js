@@ -2443,9 +2443,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
     // Register the state in the global state list and with $urlRouter if necessary.
     if (!state[abstractKey] && state.url) {
       $urlRouterProvider.when(state.url, ['$match', '$stateParams', function ($match, $stateParams) {
-        if ($state.$current.navigable != state || !equalForKeys($match, $stateParams)) {
-          $state.transitionTo(state, $match, { inherit: true, location: false });
-        }
+        $state.transitionTo(state, $match, { inherit: true, location: false });
       }]);
     }
 
