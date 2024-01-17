@@ -149,7 +149,7 @@ jQuery.bind = function(object, method){
         'opacity'   : 0,
         'width'     : this.options.width
       });
-      var element = target.closest(".ui-front, dialog");
+      var element = this.trigger.closest(".ui-front, dialog");
 
       if (!element.length) {
         element = $('body');
