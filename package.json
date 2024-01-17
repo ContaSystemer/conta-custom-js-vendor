@@ -1,6 +1,6 @@
 {
   "name": "conta-custom-js-vendor",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Used on front end.",
   "main": "index.js",
   "scripts": {
