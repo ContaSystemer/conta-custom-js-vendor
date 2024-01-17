@@ -149,7 +149,13 @@ jQuery.bind = function(object, method){
         'opacity'   : 0,
         'width'     : this.options.width
       });
-      $('body').append(this.tooltip);
+      var element = target.closest(".ui-front, dialog");
+
+      if (!element.length) {
+        element = $('body');
+      }
+
+      element.append(this.tooltip);
 
       this.skeleton = {};
       
@@ -357,4 +363,4 @@ jQuery.bind = function(object, method){
 
     }
   });
-})(jQuery);
+})(jQuery); 
